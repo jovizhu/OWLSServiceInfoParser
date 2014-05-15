@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-examples-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-excelant-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-ooxml-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/poi-scratchpad-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/xmlbeans-qname.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/jsr173_1.0_api.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/resolver.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/xbean_xpath.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/xbean.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/xmlpublic.jar"/>
+	<classpathentry kind="lib" path="/Users/jovizhu/workspace/OWLSServiceInfoParser/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
