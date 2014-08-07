@@ -81,7 +81,7 @@ public class ServiceReader {
 				System.out.println("Output parameterType : "
 						+ ((Node) textFNList.item(0)).getNodeValue().trim());
 				IONode ioNode = new IONode();
-				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim());
+				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim().split("#")[1]);
 				serviceInfo.addServiceOutput(ioNode);
 			}
 			// Get the IOPE
@@ -103,7 +103,7 @@ public class ServiceReader {
 						+ ((Node) textFNList.item(0)).getNodeValue().trim());
 				
 				IONode ioNode = new IONode();
-				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim());
+				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim().split("#")[1]);
 				serviceInfo.addServiceInput(ioNode);
 			}
 

@@ -73,9 +73,10 @@ public class ExcelWriter {
             }
             
             cellnum = cellnum+3;
-            for (;itrInput.hasNext() && i<3; i++)
+            Iterator<IONode> itrOutput = svcinfo.getServiceOutput().iterator();
+            for (;itrOutput.hasNext() && i<3; i++)
             {
-            	 IONode ionode = itrInput.next();
+            	 IONode ionode = itrOutput.next();
             	 cell = row.createCell(cellnum+i);
                  cell.setCellValue(ionode.getIONodeType());
 
