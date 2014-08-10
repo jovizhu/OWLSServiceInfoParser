@@ -69,8 +69,8 @@ public class ServiceReader {
 
 			int totalOutput = ListOfOutput.getLength();
 
-			for (; totalOutput > 0; totalOutput--) {
-				Node outputNode = ListOfOutput.item(0);
+			for (int i=0; i< totalOutput; i++) {
+				Node outputNode = ListOfOutput.item(i);
 				Element outputElement = (Element) outputNode;
 
 				NodeList outputParameterTypeList = outputElement
@@ -89,9 +89,9 @@ public class ServiceReader {
 
 			int totalInput = ListOfInput.getLength();
 
-			for (; totalInput > 0; totalInput--) {
+			for (int i=0; i< totalInput; i++) {
 
-				Node inputNode = ListOfInput.item(0);
+				Node inputNode = ListOfInput.item(i);
 				Element inputElement = (Element) inputNode;
 
 				NodeList inputParameterTypeList = inputElement
@@ -105,6 +105,29 @@ public class ServiceReader {
 				IONode ioNode = new IONode();
 				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim().split("#")[1]);
 				serviceInfo.addServiceInput(ioNode);
+			}
+			
+			// Get the IOPE
+			NodeList ListOfLocal = doc.getElementsByTagName("process:Local");
+
+			int totalLocal = ListOfLocal.getLength();
+
+			for (int i=0; i< totalLocal; i++) {
+
+				Node localNode = ListOfLocal.item(i);
+				Element localElement = (Element) localNode;
+
+				NodeList inputParameterTypeList = localElement
+						.getElementsByTagName("process:parameterType");
+				Element inputParameterTypeElement = (Element) inputParameterTypeList
+						.item(0);
+				textFNList = inputParameterTypeElement.getChildNodes();
+				System.out.println("Local parameterType : "
+						+ ((Node) textFNList.item(0)).getNodeValue().trim());
+
+				IONode ioNode = new IONode();
+				ioNode.setIONodeType(((Node) textFNList.item(0)).getNodeValue().trim().split("#")[1]);
+				serviceInfo.addServiceLocal(ioNode);
 			}
 
 		} catch (SAXParseException err) {

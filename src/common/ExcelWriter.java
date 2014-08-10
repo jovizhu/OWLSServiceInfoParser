@@ -30,8 +30,7 @@ public class ExcelWriter {
         Row row = sheet.createRow(rownum++);
         Cell cell = row.createCell(cellnum++);
         cell.setCellValue("ServiceName");
-        cell = row.createCell(cellnum++);
-        cell.setCellValue("ServiceDescription");
+
         cell = row.createCell(cellnum++);
         cell.setCellValue("ServiceInput - 1");
         cell = row.createCell(cellnum++);
@@ -44,6 +43,15 @@ public class ExcelWriter {
         cell.setCellValue("ServiceOutput - 2");
         cell = row.createCell(cellnum++);
         cell.setCellValue("ServiceOutput - 3");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("ServiceLocal - 1");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("ServiceLocal - 2");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("ServiceLocal - 3");
+        
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("ServiceDescription");
         
         Iterator<ServiceInfo> itr = serviceInfoList.iterator();
         while (itr.hasNext())
@@ -54,17 +62,13 @@ public class ExcelWriter {
             ServiceInfo svcinfo = itr.next();
             
             cell = row.createCell(cellnum);
-            cell.setCellValue(svcinfo.getServiceName());
-            
-            cell = row.createCell(cellnum+1);
-            cell.setCellValue(svcinfo.getServiceDescription());
-            
+            cell.setCellValue(svcinfo.getServiceName());   
             Iterator<IONode> itrInput = svcinfo.getServiceInput().iterator();
             
-            cellnum = cellnum+2;
+            cellnum = cellnum+1;
             int i = 0;
             
-            for (;itrInput.hasNext() && i<3; i++)
+            for (i=0;itrInput.hasNext() && i<3; i++)
             {
             	 IONode ionode = itrInput.next();
             	 cell = row.createCell(cellnum+i);
@@ -74,13 +78,26 @@ public class ExcelWriter {
             
             cellnum = cellnum+3;
             Iterator<IONode> itrOutput = svcinfo.getServiceOutput().iterator();
-            for (;itrOutput.hasNext() && i<3; i++)
+            for (i=0;itrOutput.hasNext() && i<3; i++)
             {
             	 IONode ionode = itrOutput.next();
             	 cell = row.createCell(cellnum+i);
                  cell.setCellValue(ionode.getIONodeType());
 
             }
+            
+            cellnum = cellnum+3;
+            Iterator<IONode> itrLocal = svcinfo.getServiceLocal().iterator();
+            for (i=0;itrLocal.hasNext() && i<3; i++)
+            {
+            	 IONode ionode = itrLocal.next();
+            	 cell = row.createCell(cellnum+i);
+                 cell.setCellValue(ionode.getIONodeType());
+
+            }
+            cellnum = cellnum+3;
+            cell = row.createCell(cellnum);
+            cell.setCellValue(svcinfo.getServiceDescription());
            
         }
         
